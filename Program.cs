@@ -81,16 +81,20 @@ namespace Part_6___Looping_Problems
             }
             Console.WriteLine("");
             Console.WriteLine("Odd Sum");
-            odd = 1;
+            odd = 0;
             Console.WriteLine("Please enter an integer");
             if (Int32.TryParse(Console.ReadLine(), out max) == true)
             {
-                for (int i = 1; i <= max/2; i += 2)
+                for (int i = 0; i <= max; i += 1)
                 {
-                    odd += 2;
-                    Console.WriteLine(odd);
+                    if (i % 2 != 0)
+                    {
+                        odd += i;
+                    }
+                    else
+                        Console.WriteLine("");
                 }
-                Console.WriteLine("The sum of all odd numbers below " + max + " is " + odd);
+                Console.WriteLine("The sum of all odd numbers upto and including " + max + " is " + odd);
             }
             else
                 Console.WriteLine("Enter a number");
@@ -99,26 +103,38 @@ namespace Part_6___Looping_Problems
 
 
 
-            //Console.WriteLine("");
-            //Console.WriteLine("Random Numbers");
-            //while (condition == false)
-            //{
-            //    Console.WriteLine("");
-            //    Console.WriteLine("Please enter a minimum integer");
-            //    if (Int32.TryParse(Console.ReadLine(), out min) == true)
-            //    {
-            //        Console.WriteLine("");
-            //        Console.WriteLine("Please enter a maximum integer");
+            Console.WriteLine("");
+            Console.WriteLine("Random Numbers");
+            condition = false;
+            while (condition == false)
+            {
+                Console.WriteLine("");
+                Console.WriteLine("Please enter a minimum integer");
+                if (Int32.TryParse(Console.ReadLine(), out min) == true)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Please enter a maximum integer");
+                    Console.WriteLine("Peepoo");
+                    if (Int32.TryParse(Console.ReadLine(), out max) == true)
+                    {
+                        for (int i = 0; i >= 15; i += 1)
+                        {
+                            Console.WriteLine(generator.Next(min, max));
+                            Console.WriteLine("Peepoo");
+                        }
+                        condition = true;
+                    }
+                    else
+                        Console.WriteLine("The minimum must be lower than the maximum");
+                }
+                else
+                {
+                    Console.WriteLine("Error: Valid Integer not inputted");
 
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine("Error: Valid Integer not inputted");
+                }   
 
-            //    }
-            //    if ((Int32.TryParse(Console.ReadLine(), out max) == true) && min < max)
 
-            
+            }
         }
     }
 }
