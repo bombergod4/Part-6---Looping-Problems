@@ -114,13 +114,11 @@ namespace Part_6___Looping_Problems
                 {
                     Console.WriteLine("");
                     Console.WriteLine("Please enter a maximum integer");
-                    Console.WriteLine("test");
-                    if (Int32.TryParse(Console.ReadLine(), out max) == true)
+                    if ((Int32.TryParse(Console.ReadLine(), out max) == true) && min < max)
                     {
-                        for (int i = 0; i >= 15; i += 1)
+                        for (int i = 0; i <= 15; i += 1)
                         {
                             Console.WriteLine(generator.Next(min, max));
-                            Console.WriteLine("loop");
                         }
                         condition = true;
                     }
